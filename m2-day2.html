@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Required meta tags -->
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <!-- exteranal css style shit link  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- exteranal css style shit link  -->
+   
+    <title>Musicfy</title>
+    <link rel="shortcut icon" href="asset/navlogo.png" type="image/x-icon">
+
+    <!-- EXERCISE 1 -->
+    <style>
+      body {
+        background-color: #000000;
+
+        color: white;
+      }
+      .nav-bar {
+        background-color: rgba(26, 16, 34, 0.72);
+        height: 7vh;
+      }
+      section {
+        min-height: 93vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      /*  */
+      .album-container {
+        text-align: center;
+        padding-bottom: 1em;
+        margin: 1em;
+      }
+
+      .album-container img {
+        width: 300px;
+        height: 250px;
+      }
+
+      .album-title {
+        margin-top: 0.5em;
+        margin-bottom: 0.25em;
+        font-size: 1.3em;
+      }
+      /*  */
+      #best-album {
+        background-color: rgb(105, 133, 131);
+      }
+      /*  */
+      #Hall-of-shame {
+        background-color: rgb(38, 0, 128);
+      }
+      /*  */
+      #best-artist {
+        background-color: rgb(0, 128, 75);
+      }
+      #tapestry {
+        background-color: rgb(147, 198, 207);
+      }
+      .best {
+        object-fit: fill;
+        max-width: 100%;
+      }
+      .carousel-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: lowercase;
+            color: #d1d1d1;
+            mix-blend-mode: color-burn;
+            font-weight: 900;
+        }
+    #fav-img {
+    width: 75%;
+    height: 100%;
+    margin: 50px auto;
+    border: 5px solid #0e0d0d;
+    border-radius: 8px;
+}
+#best-artist img{
+  object-fit: cover;
+}
+#best-artist h5{
+  font-size: xx-large;
+}
+.nav-logo{
+        width:40px;
+
+      }
+ /* Ex 7 */
+ .album-tapestry {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .squared {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        margin: 10px auto;
+      }
+      /* for tapestry */
+      h1 {
+        color: white;
+        font-size: 36px;
+       
+      }
+
+     
+
+      
+      
+
+      img {
+        width: 100%;
+        z-index: -1;
+        margin: auto;
+        transform: scale(1);
+        transition: all ease-in-out 0.5s;
+      }
+
+
+     
+
+     
+
+      @media only screen and (max-width: 900px) {
+        .media {
+          width: 70%;
+          height: 70%;
+        }
+      }
+      /* for tapestry */
+      /* section {
+        min-height: 93vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      } */
+    </style>
+  </head>
+  <body>
+   
+    <!-- nav bar -->
+    <nav id="up-arrow" class="navbar navbar-expand-lg nav-bar navbar-dark sticky-top">
+      <a class="navbar-brand" href="#"><img class="nav-logo" src="asset/navlogo.png" alt="" width="40px" height="">Musicfy</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#favourite-albums"
+              >Favourite Album <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#best-album">Best Album</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Hall-of-shame">Hall of Shame</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#best-artist">Best Artist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tapestery">The Tapestry</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End of nav bar -->
+  <!-- EXERCISE 1 -->
+    <!-- Start-Jumbotron -->
+    <header class="fade-in-jumbo"  id="main-jumbtron">
+    
+      <img class="jumbo-image img-fluid" src="./asset/jumbtron-img.jpg" alt="Jumbotron-image">
+      <div class="container">
+        <div class="jumbotron  bg-transparent ">
+        <h1 class="display-4 text-danger">Musicfy Web Music player</h1>
+        <p class=" text-info">House of Music! you will find a good music here</p>
+      </div>
+    </div>
+    
+  </header >
+    <!-- End-Jumbotron -->
+   
+<!-- start EX2 & Ex3  -->
+    <section id="favourite-albums">
+      <div class="container">
+        <div class="title">
+          <h2>Faourite Album</h2>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-1.jpg" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Black Panther</h4>
+              <span class="album-artist">Kedric Lamr</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-2.jfif" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Certifide Lover Boy</h4>
+              <span class="album-artist">Drake</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-3.jfif" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Scorpion</h4>
+              <span class="album-artist">Drake</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-4.jfif" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">The Album</h4>
+              <span class="album-artist">Kingande</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-1.jpg" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Black Panther</h4>
+              <span class="album-artist">Kedric Lamr</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-2.jfif" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Certifide Lover Boy</h4>
+              <span class="album-artist">Drake</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-3.jfif" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Scorpion</h4>
+              <span class="album-artist">Drake</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="album-container">
+              <img src="asset/img-3.jfif" class="img-fluid" />
+              <div class="card bg-info h-100">
+            
+              <div class="card-body">
+              <h4 class="album-title">Scorpion</h4>
+              <span class="album-artist">Drake</span>
+              <span class="red-badge position-absolute bg-danger">Rock</span>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- End EX2 & Ex3  -->
+    <!-- start EX4 -->
+   <section>
+     <div class="container mt-5">
+    <div class="title mb-2">
+      <h2>Album tracklist</h2>
+    </div>
+    <table class="table text-info ">
+      <thead>
+        <tr class=" bg-danger">
+          <th scope="col text-danger">#</th> 
+          <th scope="col">Album Tittle</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Released year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Scorpion</td>
+          <td>3:14</td>
+          <td>2017</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Scorpion</td>
+          <td>3:14</td>
+          <td>2017</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Scorpion</td>
+          <td>3:14</td>
+          <td>2017</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   </section>
+  <!-- End EX4 -->
+
+    <hr />
+    <hr />
+    <section id="best-album">
+      <div class="container">
+        <div class="title">
+          <h2 style="color: rgb(0, 0, 0);">Best Album</h2>
+        </div>
+        <div class="row justify-content-around align-items-center">
+          <div class="col-12 col-md-6">
+              <img id="fav-img"
+                  src="https://www.udiscovermusic.com/wp-content/uploads/2017/08/Aladdin-Sane.jpg"
+                  alt="">
+          </div>
+          <div class="col-12 col-md-6 mx-0">
+              <p class="bg-dark">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat modi, mollitia possimus ipsum unde numquam fugit ex voluptatem,
+                  illum ut iste deserunt voluptates incidunt quo laudantium nulla, molestias commodi labore!
+              </p>
+              
+              <p class="bg-dark">voluptates incidunt quo laudantium nulla, molestias commodi labore!.</p>
+          </div>
+      </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of excercise 4 -->
+    <!-- EXERCISE 5
+            Worst album list! Choose the albums you dislike or some you think are overrated and list it
+            in this "hall of shame" chart! 
+        -->
+    <section id="Hall-of-shame">
+      <div class="container">
+        <div class="title mb-2">
+          <h2 style="color: rgb(255, 255, 255);">Hall of the Shame</h2>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+          <div class="card" >
+            <img src="asset/img-3.jfif" class="card-img-top" alt="...">
+            <div class="card-body bg-dark">
+              <h5 class="card-title">Worst Album</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-info">Go somewhere</a>
+            </div>
+          </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+            <div class="card" >
+              <img src="asset/img-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body bg-dark">
+                <h5 class="card-title  ">Worst Album</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-info">Go somewhere</a>
+              </div>
+            </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+              <div class="card" >
+                <img src="asset/img-1.jpg " class="card-img-top" alt="...">
+                <div class="card-body bg-dark">
+                  <h5 class="card-title ">Worst Album</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-info">Go somewhere</a>
+                </div>
+              </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+                <div class="card" >
+                  <img src="asset/img-1.jpg " class="card-img-top" alt="...">
+                  <div class="card-body bg-dark">
+                    <h5 class="card-title">Worst Album</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-info">Go somewhere</a>
+                  </div>
+                </div>
+                </div>
+        </div>
+      </div>
+   
+    </section>
+
+    <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are a fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+    <section id="best-artist">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="asset/pharell.jfif" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Best Artist</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="asset/sselena.jfif" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Best Artist</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="asset/weekend.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Best Artist</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+     
+    
+    </section>
+     <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "squared" (use CSS to achieve that).
+            Put at least 20 covers (also repeated) to have a nice tapestry effect and see how Bootstrap handles it.
+        -->
+<section id="tapestery">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col-12">
+        <h1 class="">The Tapestry </h1>
+      </div>
+
+      <div class="col-12 album-tapestry">
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+          src="asset/img-4.jfif"
+          class="img-fluid squared"
+        />
+        <img
+        src="asset/img-4.jfif"
+        class="img-fluid squared"
+      />
+        
+      </div>
+    </div>
+  </div>
+</section>
+    <footer>
+      
+    <!-- EXERCISE 8
+            Implement a footer with some information / social links.
+        -->
+      <div class="container-fluid text-center bg-info">
+        <div class="px-5 mb-2 mt-3">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-instagram"></i> 
+          <i class="bi bi-youtube"></i>
+
+        </div>
+        <div class="mt- py-5">
+           Musicfy.com, &copy; 2021, all rights reserved
+        </div>
+       
+        <div class="">
+        <a href="m2-day2.html"><i class="bi bi-arrow-up-square-fill mb-5">Top</a></i>
+      </div>
+     
+    </div>
+    </footer>
+
+    <script>
+        window.onload = function () {
+                addToggleButtons()    
+                
+                countAlbums()
+            }
+            
+            // function addToggleButtons() {
+                
+            //     for (let section of document.querySelectorAll("section")) {
+                    
+            //         section.children[0].classList.add("collapse")
+            //         section.children[0].classList.add("show")
+                    
+            //         section.innerHTML = `
+            //             <button class='btn btn-outline-light toggle-btn' data-bs-toggle="collapse" data-bs-target="#${section.id} > div">
+            //                 Show/hide section
+            //             </button>
+            //         ` + section.innerHTML
+                    
+            //     }
+            // }
+            
+            function countAlbums() {
+                const albumN = document.querySelectorAll("img").length - 3
+                
+                
+                const span = document.createElement("span")
+                
+                span.classList.add("text-center")
+                span.classList.add("d-inline-block")
+                span.classList.add("w-100")
+                span.classList.add("my-4")
+                
+                span.innerHTML = " This page contains " + albumN + " albums"
+                
+                document.querySelector("footer").appendChild(span)
+            }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
