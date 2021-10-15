@@ -391,102 +391,65 @@
         </tr>
       </tbody>
     </table>
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#add-track-modal">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#staticBackdrop">
       Add Track
   </button>
   <!-- modal Start  -->
-  <div
-  class="modal fade"
-  id="add-track-modal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" style="max-width: 700px">
-    <div class="modal-content bg-purple">
-      <div class="modal-header border-0">
-        <h5 class="modal-title" id="exampleModalLabel">Add track</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add track</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">Album title</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                      </div>
+                </div>
+            </div>
           <div class="row">
-            <div class="col-6">
-              <div class="input-group mb-3">
-                <input
-                  required
-                  id="trackN"
-                  type="text"
-                  class="form-control"
-                  placeholder="#"
-                />
-                <input
-                  id="trackName"
-                  type="text"
-                  class="form-control w-50"
-                  placeholder="Name"
-                />
+              <div class="col-6">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm">#</span>
+                    </div>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
               </div>
-              <div class="input-group mb-3">
-                <input
-                  id="duration"
-                  type="text"
-                  class="form-control"
-                  placeholder="Duration"
-                />
-                <input
-                  id="feats"
-                  type="text"
-                  class="form-control w-50"
-                  placeholder="Feats."
-                />
+              <div class="col-6">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm"> Duration</span>
+                    </div>
+                    <input type="duration" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="form-check">
-                <input
-                  id="live"
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefault"
-                />
-                <label class="form-check-label" for="flexCheckDefault">
-                  Live performance?
-                </label>
+              <div class="col-6">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm">Released Date</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
               </div>
-            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button
-          type="button"
-          class="btn btn-link"
-          onclick="clearFields()"
-          data-dismiss="modal"
-        >
-          Close
-        </button>
-        <button
-          type="button"
-          class="btn bg-fuxia"
-          onclick="addNewTrack()"
-          data-dismiss="modal"
-        >
-          Add track
-        </button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" onclick="addNewTrack()" class="btn btn-primary">Add</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
       <!-- modal end  -->
 
   </div>
@@ -756,9 +719,28 @@
 
             // delete track 
             const deleteTrack = function (e) {
-    e.target.parentNode.parentNode.remove()
+    e.target.parentNode.parentNode.remove()}
+    //  add track 
+    const addNewTrack = function () {
+    let tbody = document.querySelector('tbody')
+    let newRow = document.createElement('tr')
+    tbody.appendChild(newRow)
+    let newRowNo = document.createElement('th')
+    let newRowNoValue = document.querySelector('input[name="TrackNo"]').value
+    newRowNo.setAttribute('scope', 'row')
+    newRowNo.innerText = newRowNoValue
+    newRow.appendChild(newRowNo)
+    let newTrackTitle = document.createElement('td')
+    let newTrackTitleValue = document.querySelector('input[name="TrackTitle"]').value
+    newTrackTitle.innerText = newTrackTitleValue
+    newRow.appendChild(newTrackTitle)
+    let newTrackDuration = document.createElement('td')
+    let newTrackDurationValue = document.querySelector('input[name="TrackDuration').value
+  
+
 }
-            // function addToggleButtons() {
+      //  add track  
+// function addToggleButtons() {
                 
             //     for (let section of document.querySelectorAll("section")) {
                     
